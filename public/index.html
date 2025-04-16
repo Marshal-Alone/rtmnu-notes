@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="top-nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <h1>Notes App</h1>
+                </div>
+                <button id="uploadBtn" class="upload-button">
+                    <i class="fas fa-plus"></i>
+                    Upload Note
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h2>My Notes</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search notes...">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="notes-grid" id="notesGrid">
+                <!-- Notes will be dynamically added here -->
+            </div>
+        </main>
+
+        <!-- Upload Modal -->
+        <div class="modal" id="uploadModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Upload New Note</h3>
+                    <button class="close-button" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadForm">
+                        <div class="form-group">
+                            <label for="title">Note Title</label>
+                            <input type="text" id="title" name="title" required placeholder="Enter note title">
+                        </div>
+                        <div class="form-group">
+                            <div class="file-drop-zone" id="dropZone">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop your file here</p>
+                                <p class="drop-text">or click to select file</p>
+                                <input type="file" id="file" name="file" hidden required>
+                            </div>
+                            <div id="fileInfo" class="file-info"></div>
+                        </div>
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress" id="progressBar"></div>
+                            </div>
+                            <p class="progress-text" id="progressText">0%</p>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button">
+                                <i class="fas fa-upload"></i>
+                                Upload Note
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

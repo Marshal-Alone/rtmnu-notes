@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Notes Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Login Form -->
+        <div id="loginForm" class="admin-form">
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="admin-button">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+            <header class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <button id="logoutBtn" class="admin-button secondary">Logout</button>
+            </header>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="stat-info">
+                        <h3>Total Notes</h3>
+                        <p id="totalNotes">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-database"></i>
+                    <div class="stat-info">
+                        <h3>Total Storage</h3>
+                        <p id="totalStorage">0 MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes-management">
+                <h2>Manage Notes</h2>
+                <div class="search-bar">
+                    <input type="text" id="adminSearchInput" placeholder="Search notes...">
+                    <button class="admin-button" id="adminSearchBtn">Search</button>
+                </div>
+                <div class="notes-table-container">
+                    <table class="notes-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>File Type</th>
+                                <th>Size</th>
+                                <th>Upload Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notesTableBody">
+                            <!-- Notes will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
